@@ -23,6 +23,10 @@ ReIMO (Remade International Mathematical Olympiad) is a purpose-built benchmark 
 
 All 807 tasks are drawn exclusively from IMO contests and shortlists (1959 – 2023), covering the four canonical domains—algebra, geometry, number theory, combinatorics—and tagged by year, topic, and source. ReIMO therefore delivers a high-resolution, noise-free yard-stick for evaluating both answer-finding and proof-writing skills in modern LLMs.
 
+> [!NOTE]
+>
+> In the `ReIMO` folder, we provide both `.jsonl` and `.csv` files for each task. The contents are the same. Just choose the one you prefer.
+
 ------
 
 ## 💡 News
@@ -70,14 +74,14 @@ cd ./code
 python3 ./ReIMO_Proof_Open_Source.py
 ```
 
-### API
+### Judge
 
-We also provide a sample code for evaluating the model with api. You can replace the `model_name` variable with your own model name, `api_key` with your own api key, and `base_url` with the url of the api.
+We also provide a sample code for evaluating the answer with `Qwen/Qwen3-8B` judge. If you have your fine-tuned judge, you can replace the `MODEL_NAME` variable with your own judge name.
 
 ```bash
 cd ./code
-python3 ./ReIMO_Proof_API.py
-``` 
+python3 ./ReIMO_Proof_Judge.py
+```
 
 ------
 
