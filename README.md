@@ -89,12 +89,12 @@ python3 ./RIMO_P_Judge.py
 
 If you use RIMO in your work, please cite the following paper:
 
-```
+<!-- ```
 @article{chen2025reimo,
           title={ReIMO: A Remade International Mathematical Olympiad Benchmark for Evaluating Large Language Models},
           year={2025},
 }
-```
+``` -->
 
 
 
