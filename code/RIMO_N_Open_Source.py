@@ -2,7 +2,7 @@ import re, time, pandas as pd, torch, os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # ── 0. constants ───────────────────────────────────────────────
-CSV_PATH    = "../ReIMO/ReIMO-Main.csv"
+CSV_PATH    = "../RIMO/RIMO-N.csv"
 OUTPUT_CSV  = "proof_answer_qwen3_8b.csv"
 TAIL = (
     "\n\nPlease think step by step, and put your final answer within "

@@ -47,7 +47,7 @@ def ask_gpt(question: str) -> str:
     return "".join(parts)
 
 # ── 2. load dataset ───────────────────────────────────────────
-CSV_IN  = "../ReIMO/ReIMO-Main.csv"
+CSV_IN  = "../RIMO/RIMO-N.csv"
 CSV_OUT = "answer_qwq.csv"
 
 df = pd.read_csv(CSV_IN)[["problem_id", "problem", "answer"]]

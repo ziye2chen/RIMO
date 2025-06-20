@@ -5,7 +5,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # ── 0. Paths & settings ───────────────────────────────────────────
-CSV_IN       = "../ReIMO/ReIMO-Proof.csv"                # input with cols: problem_id, problem, solution
+CSV_IN       = "../RIMO/RIMO-P.csv"                # input with cols: problem_id, problem, solution
 LLM_OUT      = "proof_llm_solutions.csv"      # incremental LLM‐only output
 CSV_OUT      = "proof_answers_qwen3_8b.csv"   # final merged output
 MODEL        = "Qwen/Qwen3-8B"
