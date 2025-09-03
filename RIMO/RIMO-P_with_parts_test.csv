@@ -1,0 +1,184 @@
+problem_id,problem,solution,solution_word_count,parts
+2023a3,"Let $x_{1}, x_{2}, \ldots, x_{2023}$ be distinct real positive numbers such that
+
+$$
+a_{n}=\sqrt{\left(x_{1}+x_{2}+\cdots+x_{n}\right)\left(\frac{1}{x_{1}}+\frac{1}{x_{2}}+\cdots+\frac{1}{x_{n}}\right)}
+$$
+
+is an integer for every $n=1,2, \ldots, 2023$. Prove that $a_{2023} \geqslant 3034$.","We start with some basic observations. First note that the sequence $a_{1}, a_{2}, \ldots, a_{2023}$ is increasing and thus, since all elements are integers, $a_{n+1}-a_{n} \geqslant 1$. We also observe that $a_{1}=1$ and
+
+$$
+a_{2}=\sqrt{\left(x_{1}+x_{2}\right)\left(\frac{1}{x_{1}}+\frac{1}{x_{2}}\right)}>2
+$$
+
+by Cauchy-Schwarz inequality and using $x_{1} \neq x_{2}$. So, $a_{2} \geqslant 3$.\\
+Now, we proceed to the main part of the argument. We observe that 3034 is about three halves of 2023. Motivated by this observation, we will prove the following.\\
+Claim. If $a_{n+1}-a_{n}=1$, then $a_{n+2}-a_{n+1} \geqslant 2$.\\
+In other words, the sequence has to increase by at least 2 at least half of the times. Assuming the claim is true, since $a_{1}=1$, we would be done since
+
+$$
+\begin{aligned}
+a_{2023} & =\left(a_{2023}-a_{2022}\right)+\left(a_{2022}-a_{2021}\right)+\cdots+\left(a_{2}-a_{1}\right)+a_{1} \\
+& \geqslant(2+1) \cdot 1011+1 \\
+& =3034
+\end{aligned}
+$$
+
+We now prove the claim. We start by observing that
+
+$$
+\begin{aligned}
+a_{n+1}^{2}= & \left(x_{1}+\cdots+x_{n+1}\right)\left(\frac{1}{x_{1}}+\cdots+\frac{1}{x_{n+1}}\right) \\
+= & \left(x_{1}+\cdots+x_{n}\right)\left(\frac{1}{x_{1}}+\cdots+\frac{1}{x_{n}}\right)+1 \\
+& \quad+\frac{1}{x_{n+1}}\left(x_{1}+\cdots+x_{n}\right)+x_{n+1}\left(\frac{1}{x_{1}}+\cdots+\frac{1}{x_{n}}\right) \\
+\geqslant & a_{n}^{2}+1+2 \sqrt{\frac{1}{x_{n+1}}\left(x_{1}+\cdots+x_{n}\right) \cdot x_{n+1}\left(\frac{1}{x_{1}}+\cdots+\frac{1}{x_{n}}\right)} \\
+= & a_{n}^{2}+1+2 a_{n} \\
+= & \left(a_{n}+1\right)^{2}
+\end{aligned}
+$$
+
+where we used AM-GM to obtain the inequality. In particular, if $a_{n+1}=a_{n}+1$, then
+
+
+\begin{equation*}
+\frac{1}{x_{n+1}}\left(x_{1}+\cdots+x_{n}\right)=x_{n+1}\left(\frac{1}{x_{1}}+\cdots+\frac{1}{x_{n}}\right) . \tag{1}
+\end{equation*}
+
+
+Now, assume for the sake of contradiction that both $a_{n+1}=a_{n}+1$ and $a_{n+2}=a_{n+1}+1$ hold. In this case, (1) gives
+
+$$
+\frac{1}{x_{n+2}}\left(x_{1}+\cdots+x_{n+1}\right)=x_{n+2}\left(\frac{1}{x_{1}}+\cdots+\frac{1}{x_{n+1}}\right) .
+$$
+
+We can rewrite this relation as
+
+$$
+\frac{x_{n+1}}{x_{n+2}}\left(\frac{1}{x_{n+1}}\left(x_{1}+\cdots+x_{n}\right)+1\right)=\frac{x_{n+2}}{x_{n+1}}\left(x_{n+1}\left(\frac{1}{x_{1}}+\cdots+\frac{1}{x_{n}}\right)+1\right)
+$$
+
+From (1) again, we conclude that $x_{n+1}=x_{n+2}$ which is a contradiction.",229,2
+2023a7,"Let $N$ be a positive integer. Prove that there exist three permutations $a_{1}, a_{2}, \ldots, a_{N}$; $b_{1}, b_{2}, \ldots, b_{N}$; and $c_{1}, c_{2}, \ldots, c_{N}$ of $1,2, \ldots, N$ such that
+
+$$
+\left|\sqrt{a_{k}}+\sqrt{b_{k}}+\sqrt{c_{k}}-2 \sqrt{N}\right|<2023
+$$
+
+for every $k=1,2, \ldots, N$.","The idea is to approximate the numbers $\sqrt{1}, \sqrt{2}, \ldots, \sqrt{N}$ by the nearest integer with errors $<0.5$. This gives the following sequence
+
+$$
+1,1,2,2,2,2,3,3,3,3,3,3,4, \ldots
+$$
+
+More precisely, for each $k \geqslant 1$, we round $\sqrt{k^{2}-k+1}, \ldots, \sqrt{k^{2}+k}$ to $k$, so that there are $2 k$ copies of $k$.
+
+Step 1. We first consider the easier case when $N$ has the form
+
+$$
+N=m(m+1) .
+$$
+
+In this case, the numbers $\sqrt{1}, \sqrt{2}, \ldots, \sqrt{N}$ are approximated by the elements of the multiset $\left\{1_{\times 2}, 2_{\times 4}, 3_{\times 6}, \ldots, m_{\times 2 m}\right\}$. Let $T_{m}$ denote ""half of"" the multiset, i.e.
+
+$$
+T_{m}:=\left\{1_{\times 1}, 2_{\times 2}, 3_{\times 3}, \ldots, m_{\times m}\right\} .
+$$
+
+We will prove by induction that there exists three permutations $\left(u_{k}\right),\left(v_{k}\right)$, and $\left(w_{k}\right)$ of the elements in the multiset $T_{m}$ such that $u_{k}+v_{k}+w_{k}=2 m+1$ is constant for $k=1,2, \ldots, \frac{m(m+1)}{2}$.
+
+When $m=1$, take $1+1+1=3$. When $m=2$, take $(1,2,2)+(2,1,2)+(2,2,1)=(5,5,5)$. Suppose that we have constructed three permutations $\left(u_{k}\right),\left(v_{k}\right)$, and ( $w_{k}$ ) of $T_{m-1}$ satisfying $u_{k}+v_{k}+w_{k}=2 m-1$ for every $k=1,2, \ldots, \frac{m(m-1)}{2}$. For $T_{m}$, we note that
+
+$$
+T_{m}=T_{m-1} \sqcup\left\{m_{\times m}\right\},
+$$
+
+and also
+
+
+\begin{equation*}
+T_{m}=\left(T_{m-1}+1\right) \sqcup\{1,2, \ldots, m\} . \tag{1}
+\end{equation*}
+
+
+Here $T_{m-1}+1$ means to add 1 to all elements in $T_{m-1}$. We construct the permutations $\left(u_{k}^{\prime}\right)$, $\left(v_{k}^{\prime}\right)$, and ( $w_{k}^{\prime}$ ) of $T_{m}$ as follows:
+
+\begin{itemize}
+  \item For $k=1,2, \ldots, \frac{m(m-1)}{2}$, we set $u_{k}^{\prime}=u_{k}, v_{k}^{\prime}=v_{k}+1, w_{k}^{\prime}=w_{k}+1$.
+  \item For $k=\frac{m(m-1)}{2}+r$ with $r=1,2, \ldots, m$, we set $u_{k}^{\prime}=m, v_{k}^{\prime}=r, w_{k}^{\prime}=m+1-r$.
+\end{itemize}
+
+It is clear from (1) that $\left(u_{k}^{\prime}\right),\left(v_{k}^{\prime}\right)$, and $\left(w_{k}^{\prime}\right)$ give three permutations of $T_{m}$, and that they satisfy $u_{k}^{\prime}+v_{k}^{\prime}+w_{k}^{\prime}=2 m+1$ for every $k=1,2, \ldots, \frac{m(m+1)}{2}$.
+
+The inductive construction can be visualised by the $3 \times \frac{m(m+1)}{2}$ matrix
+
+$$
+\left[\begin{array}{cccccc}
+u_{1} & \ldots & u_{m(m-1) / 2} & m & \ldots & m \\
+v_{1}+1 & \ldots & v_{m(m-1) / 2}+1 & 1 & \ldots & m \\
+w_{1}+1 & \ldots & w_{m(m-1) / 2}+1 & m & \ldots & 1
+\end{array}\right],
+$$
+
+in which the three rows represent the permutations $\left(u_{k}^{\prime}\right),\left(v_{k}^{\prime}\right),\left(w_{k}^{\prime}\right)$, and the sum of the three entries of each column is $2 m+1$.
+
+Thus, when $N=m^{2}+m$, we can construct permutations $\left(a_{k}\right),\left(b_{k}\right)$, and $\left(c_{k}\right)$ of $1,2, \ldots, N$ such that
+
+
+\begin{equation*}
+2 m+1-1.5<\sqrt{a_{k}}+\sqrt{b_{k}}+\sqrt{c_{k}}<2 m+1+1.5 \tag{2}
+\end{equation*}
+
+
+This gives
+
+$$
+\left|\sqrt{a_{k}}+\sqrt{b_{k}}+\sqrt{c_{k}}-2 \sqrt{N}\right|<2.5<2023
+$$
+
+where we used that $-1<2 m-2 \sqrt{m^{2}+m}<0$ for positive $m$.\\
+Step 2. We now proceed to the general case. Let $m$ be such that
+
+$$
+m(m+1) \leqslant N<(m+1)(m+2)
+$$
+
+Write $N=m(m+1)+t$ for some $t \in\{0,1, \ldots, 2 m+1\}$ and let
+
+$$
+L:=\left\lfloor\frac{4}{9} N\right\rfloor .
+$$
+
+We will make use of the following inequalities below:
+
+$$
+N>m^{2}, \quad N<(m+2)^{2}, \quad t \leqslant 2 m+1, \quad L+1>4 N / 9, \quad L \leqslant 4 N / 9
+$$
+
+As above, we construct three permutations $\left(a_{k}\right),\left(b_{k}\right)$, and $\left(c_{k}\right)$ of $1,2, \ldots, m(m+1)$ satisfying (2). Now we construct the three required permutations $\left(A_{k}\right),\left(B_{k}\right)$, and $\left(C_{k}\right)$ of $1,2, \ldots, N$ as follows:
+
+For $k=1,2, \ldots, m(m+1)$, if $a_{k} \leqslant L$, take $A_{k}=a_{k}$, and if $a_{k}>L$, take $A_{k}=a_{k}+t$. For $k=m(m+1)+r$ with $r=1,2, \ldots, t$, set $A_{k}=L+r$. Define the permutations $\left(B_{k}\right)$ and $\left(C_{k}\right)$ similarly. Now for $k=1,2, \ldots, m(m+1)$, we show $0 \leqslant \sqrt{A_{k}}-\sqrt{a_{k}} \leqslant 2$. The lower bound is obvious. If $m \leqslant 1$, then $N \leqslant 5$ and hence $\sqrt{A_{k}}-\sqrt{a_{k}} \leqslant \sqrt{5}-\sqrt{1} \leqslant 2$. If $m \geqslant 2$, then
+
+$$
+\sqrt{A_{k}}-\sqrt{a_{k}}=\frac{A_{k}-a_{k}}{\sqrt{A_{k}}+\sqrt{a_{k}}} \leqslant \frac{t}{2 \sqrt{L+1}} \leqslant \frac{2 m+1}{\frac{4}{3} m} \leqslant 2
+$$
+
+We have similar inequalities for $\left(B_{k}\right)$ and $\left(C_{k}\right)$. Thus
+
+$$
+2 \sqrt{N}-4.5<2 m+1-1.5 \leqslant \sqrt{A_{k}}+\sqrt{B_{k}}+\sqrt{C_{k}} \leqslant 2 m+1+1.5+6<2 \sqrt{N}+8.5
+$$
+
+For $k=m^{2}+m+1, \ldots, m^{2}+m+t$, we have
+
+$$
+2 \sqrt{N}<3 \sqrt{L+1} \leqslant \sqrt{A_{k}}+\sqrt{B_{k}}+\sqrt{C_{k}} \leqslant 3 \sqrt{L+t} \leqslant \sqrt{4 N+9 t}<2 \sqrt{N}+8.5
+$$
+
+To sum up, we have defined three permutations $\left(A_{k}\right),\left(B_{k}\right)$, and $\left(C_{k}\right)$ of $1,2, \ldots, N$, such that
+
+$$
+\left|\sqrt{A_{k}}+\sqrt{B_{k}}+\sqrt{C_{k}}-2 \sqrt{N}\right|<8.5<2023
+$$
+
+holds for every $k=1,2, \ldots, N$.
+",629,4
