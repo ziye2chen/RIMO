@@ -117,6 +117,47 @@ def call_gemini_with_retry(client: genai.Client, prompt: str, model: str) -> str
     raise RuntimeError("Unreachable")
 
 
+def _sanitize_json_backslashes(text: str) -> str:
+    """Escape invalid backslashes inside JSON string values.
+
+    Strategy:
+    - Double every backslash that is not already part of a valid JSON escape sequence.
+    - Valid JSON escapes: \" \\ \/ \b \f \n \r \t \uXXXX
+    """
+    import re
+
+    # First, protect valid escapes by temporarily marking them
+    protected = {
+        '\\\\"': '__ESC_DQ__',
+        '\\\\\\\\\\': '__ESC_BS__',
+        '\\\\/': '__ESC_SLASH__',
+        '\\\\b': '__ESC_b__',
+        '\\\\f': '__ESC_f__',
+        '\\\\n': '__ESC_n__',
+        '\\\\r': '__ESC_r__',
+        '\\\\t': '__ESC_t__',
+    }
+
+    def protect(s: str) -> str:
+        for k, v in protected.items():
+            s = s.replace(k, v)
+        # Protect \uXXXX sequences
+        s = re.sub(r"\\\\u([0-9a-fA-F]{4})", r"__ESC_u_\1__", s)
+        return s
+
+    def unprotect(s: str) -> str:
+        s = re.sub(r"__ESC_u_([0-9a-fA-F]{4})__", r"\\u\1", s)
+        for k, v in protected.items():
+            s = s.replace(v, k)
+        return s
+
+    tmp = protect(text)
+    # Any remaining single backslash should be doubled
+    tmp = tmp.replace('\\', '\\\\')
+    repaired = unprotect(tmp)
+    return repaired
+
+
 def parse_parts_json(raw_text: str, fallback_parts: int) -> Tuple[int, List[Tuple[str, str]]]:
     # Some models may wrap JSON in code fences; try to extract JSON block if present.
     text = raw_text.strip()
@@ -135,11 +176,14 @@ def parse_parts_json(raw_text: str, fallback_parts: int) -> Tuple[int, List[Tupl
         # Attempt to find a JSON object inside the text
         first = text.find("{")
         last = text.rfind("}")
-        if first != -1 and last != -1 and last > first:
-            candidate = text[first : last + 1]
+        candidate = text[first : last + 1] if (first != -1 and last != -1 and last > first) else text
+        # Try direct candidate
+        try:
             data = json.loads(candidate)
-        else:
-            raise
+        except json.JSONDecodeError:
+            # As a fallback, try sanitizing invalid backslashes
+            repaired = _sanitize_json_backslashes(candidate)
+            data = json.loads(repaired)
 
     number_of_parts = int(data.get("number_of_parts", fallback_parts))
     parts_list = data.get("parts", [])
