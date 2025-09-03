@@ -216,9 +216,9 @@ def process_row(
 
     if target_parts == 1:
         subs: List[Optional[str]] = [problem, solution]
-        # pad remaining 3 pairs with None
+        # pad remaining 3 pairs with literal "None"
         for _ in range(3):
-            subs.extend([None, None])
+            subs.extend(["None", "None"])
         return problem_id, problem, solution, 1, subs
 
     prompt = build_prompt(problem=problem, solution=solution, target_parts=target_parts)
@@ -239,11 +239,11 @@ def process_row(
     # Flatten into [sub-problem1, sub-solution1, ..., sub-problem4, sub-solution4]
     flattened: List[Optional[str]] = []
     for sub_problem, sub_solution in parts_list:
-        flattened.append(sub_problem if sub_problem else None)
-        flattened.append(sub_solution if sub_solution else None)
+        flattened.append(sub_problem if sub_problem else "None")
+        flattened.append(sub_solution if sub_solution else "None")
     # pad up to 4 pairs
     for _ in range(4 - target_parts):
-        flattened.extend([None, None])
+        flattened.extend(["None", "None"])
 
     return problem_id, problem, solution, target_parts, flattened
 
