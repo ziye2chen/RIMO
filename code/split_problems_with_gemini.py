@@ -22,7 +22,8 @@ DEFAULT_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-pro")
 def read_rows(input_csv_path: str) -> List[Dict[str, str]]:
     with open(input_csv_path, "r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
-        required = {"problem_id", "problem", "solution", "solution_word_count", "parts"}
+        # Only strictly require columns needed for processing. problem_id can be generated if absent.
+        required = {"problem", "solution", "parts"}
         missing = required.difference(reader.fieldnames or [])
         if missing:
             raise ValueError(f"Input CSV missing required columns: {sorted(missing)}")
@@ -214,6 +215,10 @@ def process_row(
     # We only have columns for up to 4 parts; cap here for consistency.
     target_parts = max(1, min(4, requested_parts))
 
+    if not problem_id:
+        # Will be replaced by caller if needed using row index
+        problem_id = ""
+
     if target_parts == 1:
         subs: List[Optional[str]] = [problem, solution]
         # pad remaining 3 pairs with literal "None"
@@ -265,17 +270,19 @@ def main(argv: List[str]) -> int:
                 problem_id, problem, solution, num_parts, flattened = process_row(
                     client, row, model
                 )
+                if not problem_id:
+                    problem_id = f"row_{idx:05d}"
             except Exception as exc:  # noqa: BLE001
                 sys.stderr.write(
                     f"Row {idx} (problem_id={row.get('problem_id')}): failed with {exc}. Filling Nones.\n"
                 )
-                problem_id = row.get("problem_id", "")
+                problem_id = row.get("problem_id", "") or f"row_{idx:05d}"
                 problem = row.get("problem", "")
                 solution = row.get("solution", "")
                 num_parts = 1
                 flattened = [problem, solution]
                 for _ in range(3):
-                    flattened.extend([None, None])
+                    flattened.extend(["None", "None"])
 
             writer.writerow([
                 problem_id,
