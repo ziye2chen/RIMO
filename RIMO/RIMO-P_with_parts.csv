@@ -1,4 +1,4 @@
-problem_id,problem,solution,solution_word_count,parts
+﻿problem_id,problem,solution,solution_word_count,parts
 2023a2,"Let $\mathbb{R}$ be the set of real numbers. Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be a function such that
 
 $$
@@ -3380,10 +3380,10 @@ Since $m$ is even, all signs in the last sum are equal; with $N=n(m-1)-1$ this p
 However, there are infinitely many cases when all terms in $(*)$ cancel out, for example if $m$ is an odd divisor of $n+1$. In such cases, $\operatorname{deg} f$ can be less than $n(m-1)$.
 
 Comment 3. The lemma is closely related to the so-called\\
-Alon-F��redi bound. Let $S_{1}, \ldots, S_{n}$ be nonempty finite sets in a field and suppose that the polynomial $P\left(x_{1}, \ldots, x_{n}\right)$ vanishes at the points of the grid $S_{1} \times \ldots \times S_{n}$, except for a single point. Then $\operatorname{deg} P \geqslant \sum_{i=1}^{n}\left(\left|S_{i}\right|-1\right)$.\\
-(A well-known application of the Alon-F��redi bound was the former IMO problem 2007/6. Since then, this result became popular among the students and is part of the IMO training for many IMO teams.)
+Alon-F锟斤拷redi bound. Let $S_{1}, \ldots, S_{n}$ be nonempty finite sets in a field and suppose that the polynomial $P\left(x_{1}, \ldots, x_{n}\right)$ vanishes at the points of the grid $S_{1} \times \ldots \times S_{n}$, except for a single point. Then $\operatorname{deg} P \geqslant \sum_{i=1}^{n}\left(\left|S_{i}\right|-1\right)$.\\
+(A well-known application of the Alon-F锟斤拷redi bound was the former IMO problem 2007/6. Since then, this result became popular among the students and is part of the IMO training for many IMO teams.)
 
-The proof of the lemma can be replaced by an application of the Alon-F��redi bound as follows. Let $d=\operatorname{deg} G$, and let $G_{0}$ be the unique polynomial such that $G_{0}(x)=G(x)$ for $x \in\{0,1, \ldots, d-1\}$ but $\operatorname{deg} G_{0}<d$. The polynomials $G_{0}$ and $G$ are different because they have different degrees, and they attain the same values at $0,1, \ldots, d-1$; that enforces $G_{0}(d) \neq G(d)$.
+The proof of the lemma can be replaced by an application of the Alon-F锟斤拷redi bound as follows. Let $d=\operatorname{deg} G$, and let $G_{0}$ be the unique polynomial such that $G_{0}(x)=G(x)$ for $x \in\{0,1, \ldots, d-1\}$ but $\operatorname{deg} G_{0}<d$. The polynomials $G_{0}$ and $G$ are different because they have different degrees, and they attain the same values at $0,1, \ldots, d-1$; that enforces $G_{0}(d) \neq G(d)$.
 
 Choose some nonnegative integers $b_{1}, \ldots, b_{n}$ so that $b_{1} \leqslant a_{1}, \ldots, b_{n} \leqslant a_{n}$, and $b_{1}+\ldots+b_{n}=d$, and consider the polynomial
 
@@ -3392,7 +3392,7 @@ H\left(x_{1}, \ldots, x_{n}\right)=F\left(x_{1}, \ldots, x_{n}\right)-G_{0}\left
 $$
 
 on the grid $\left\{0,1, \ldots, b_{1}\right\} \times \ldots \times\left\{0,1, \ldots, b_{n}\right\}$.\\
-At the point $\left(b_{1}, \ldots, b_{n}\right)$ we have $H\left(b_{1}, \ldots, b_{n}\right)=G(d)-G_{0}(d) \neq 0$. At all other points of the grid we have $F=G$ and therefore $H=G-G_{0}=0$. So, by the Alon-F��redi bound, deg $H \geqslant b_{1}+\ldots+b_{n}=d$. Since $\operatorname{deg} G_{0}<d$, this implies $\operatorname{deg} F=\operatorname{deg}\left(H+G_{0}\right)=\operatorname{deg} H \geqslant d=\operatorname{deg} G$.",897,4
+At the point $\left(b_{1}, \ldots, b_{n}\right)$ we have $H\left(b_{1}, \ldots, b_{n}\right)=G(d)-G_{0}(d) \neq 0$. At all other points of the grid we have $F=G$ and therefore $H=G-G_{0}=0$. So, by the Alon-F锟斤拷redi bound, deg $H \geqslant b_{1}+\ldots+b_{n}=d$. Since $\operatorname{deg} G_{0}<d$, this implies $\operatorname{deg} F=\operatorname{deg}\left(H+G_{0}\right)=\operatorname{deg} H \geqslant d=\operatorname{deg} G$.",897,4
 2018c1,"Let $n \geqslant 3$ be an integer. Prove that there exists a set $S$ of $2 n$ positive integers satisfying the following property: For every $m=2,3, \ldots, n$ the set $S$ can be partitioned into two subsets with equal sums of elements, with one of subsets of cardinality $m$.\\
 (Iceland)\\
 Solution. We show that one of possible examples is the set
@@ -4269,7 +4269,7 @@ g(x) \leqslant g(y) \quad \text { whenever } x<y \tag{1}
 
 Again, this condition is equivalent to the same one with $g$ replaced by $g_{1}$.\\
 If $g(x)=2 x$ for all $x \in \mathbb{R}$, then $(*)$ is obvious; so in what follows we consider the other case. We split the solution into a sequence of lemmas, strengthening one another. We always consider some value of $x$ with $g(x) \neq 2 x$ and denote $X=g(x)$.\\
-Lemma 1. Assume that $X<2 x$. Then on the interval $(X-x ; x]$ the function $g$ attains at most two values - namely, $X$ and, possibly, some $Y>X$. Similarly, if $X>2 x$, then $g$ attains at most two values on $[x ; X-x)$ ���?namely, $X$ and, possibly, some $Y<X$.\\
+Lemma 1. Assume that $X<2 x$. Then on the interval $(X-x ; x]$ the function $g$ attains at most two values - namely, $X$ and, possibly, some $Y>X$. Similarly, if $X>2 x$, then $g$ attains at most two values on $[x ; X-x)$ 锟斤拷锟?namely, $X$ and, possibly, some $Y<X$.\\
 Proof. We start with the first claim of the lemma. Notice that $X-x<x$, so the considered interval is nonempty.
 
 Take any $a \in(X-x ; x)$ with $g(a) \neq X$ (if it exists). If $g(a)<X$, then $(*)$ yields $g(a) \leqslant$ $a+x \leqslant g(x)=X$, so $a \leqslant X-x$ which is impossible. Thus, $g(a)>X$ and hence by $(*)$ we get $X \leqslant a+x \leqslant g(a)$.
@@ -4658,7 +4658,7 @@ $$
 \frac{a}{q_{i}} F_{q_{i}}(x, y) \equiv \frac{a}{q_{i}} \quad(\bmod a)
 $$
 
-for any relatively prime $x, y$. By B��zout's lemma, there is an integer linear combination of the $\frac{a}{q_{i}}$ that equals 1 . Thus, there is a linear combination of the $F_{q_{i}}$ such that $F_{q_{i}}(x, y) \equiv 1$ $(\bmod a)$ for any relatively prime $(x, y)$; and this polynomial is homogenous because all the $F_{q_{i}}$ have the same degree.
+for any relatively prime $x, y$. By B锟斤拷zout's lemma, there is an integer linear combination of the $\frac{a}{q_{i}}$ that equals 1 . Thus, there is a linear combination of the $F_{q_{i}}$ such that $F_{q_{i}}(x, y) \equiv 1$ $(\bmod a)$ for any relatively prime $(x, y)$; and this polynomial is homogenous because all the $F_{q_{i}}$ have the same degree.
 
 ",485,3
 2017n8,"Let $p$ be an odd prime number and $\mathbb{Z}_{>0}$ be the set of positive integers. Suppose that a function $f: \mathbb{Z}_{>0} \times \mathbb{Z}_{>0} \rightarrow\{0,1\}$ satisfies the following properties:
@@ -8385,7 +8385,7 @@ so $f(0) \geq 0$. Combining this with (4) we obtain $f(0)=0$.
 
 Throughout both solutions, we denote the sums of the form $f(a, b, c)+f(b, c, a)+f(c, a, b)$ by $\sum f(a, b, c)$.","The condition $b+c>\sqrt{2}$ implies $b^{2}+c^{2}>1$, so $a^{2}=3-\left(b^{2}+c^{2}\right)<2$, i.e. $a<\sqrt{2}<b+c$. Hence we have $b+c-a>0$, and also $c+a-b>0$ and $a+b-c>0$ for similar reasons.
 
-We will use the variant of H��LDER's inequality
+We will use the variant of H锟斤拷LDER's inequality
 
 $$
 \frac{x_{1}^{p+1}}{y_{1}^{p}}+\frac{x_{1}^{p+1}}{y_{1}^{p}}+\ldots+\frac{x_{n}^{p+1}}{y_{n}^{p}} \geq \frac{\left(x_{1}+x_{2}+\ldots+x_{n}\right)^{p+1}}{\left(y_{1}+y_{2}+\ldots+y_{n}\right)^{p}}
@@ -10640,7 +10640,7 @@ $$
 \left(\frac{a}{b}+\frac{b}{c}+\frac{c}{d}+\frac{d}{a}\right)^{3}\left(\frac{b}{a}+\frac{c}{b}+\frac{d}{c}+\frac{a}{d}\right) \geq(a+b+c+d)^{4} .
 $$
 
-It suffices to apply H��lder's inequality to the sequences in the four rows, with weights $1 / 4$ :
+It suffices to apply H锟斤拷lder's inequality to the sequences in the four rows, with weights $1 / 4$ :
 
 $$
 \begin{gathered}
@@ -11886,9 +11886,9 @@ Denote the incircles of triangles $ADP$ and $BCP$ by $\omega_A$ and $\omega_B$. 
 Consider the homothety $h_2$ with a positive scale taking $\omega$ to $\Omega$. Consider $h_2$ as the composition of two homotheties: taking $\omega$ to $\Omega_A$ (with a positive scale and center $C$), and taking $\Omega_A$ to $\Omega$ (with a positive scale and center $A$), respectively. So the center of $h_2$ lies on line $AC$. By analogous reasoning, it lies also on $BD$, hence this center is $E$. Thus, $E$ also lies on the line of centers $IJ$, and the claim is proved.
 
 \vspace{1em}
-\textbf{Comment.} In both main steps of the solution, there can be several different reasonings for the same claims. For instance, one can mostly use Desargues���?theorem instead of the three homotheties theorem. Namely, if $I_A$ and $I_B$ are the centers of $\omega_A$ and $\omega_B$, then lines $I_AI_B$, $KL$ and $AB$ are concurrent (by the theorem on three similitude centers applied to $\omega$, $\omega_A$ and $\omega_B$). Then Desargues���?theorem, applied to triangles $AI_AK$ and $BI_BL$, yields that the points $J = AI_A \cap BI_B$, $I = I_AK \cap I_BL$ and $F = AK \cap BL$ are collinear.
+\textbf{Comment.} In both main steps of the solution, there can be several different reasonings for the same claims. For instance, one can mostly use Desargues锟斤拷锟?theorem instead of the three homotheties theorem. Namely, if $I_A$ and $I_B$ are the centers of $\omega_A$ and $\omega_B$, then lines $I_AI_B$, $KL$ and $AB$ are concurrent (by the theorem on three similitude centers applied to $\omega$, $\omega_A$ and $\omega_B$). Then Desargues锟斤拷锟?theorem, applied to triangles $AI_AK$ and $BI_BL$, yields that the points $J = AI_A \cap BI_B$, $I = I_AK \cap I_BL$ and $F = AK \cap BL$ are collinear.
 
-For the second step, let $J_A$ and $J_B$ be the centers of $\Omega_A$ and $\Omega_B$. Then lines $J_AJ_B$, $AB$ and $CD$ are concurrent, since they appear to be the two common tangents and the line of centers of $\Omega_A$ and $\Omega_B$. Applying Desargues���?theorem to triangles $AJ_AC$ and $BJ_BD$, we obtain that the points $J = AJ_A \cap BJ_B$, $I = CJ_A \cap DJ_B$ and $E = AC \cap BD$ are collinear.
+For the second step, let $J_A$ and $J_B$ be the centers of $\Omega_A$ and $\Omega_B$. Then lines $J_AJ_B$, $AB$ and $CD$ are concurrent, since they appear to be the two common tangents and the line of centers of $\Omega_A$ and $\Omega_B$. Applying Desargues锟斤拷锟?theorem to triangles $AJ_AC$ and $BJ_BD$, we obtain that the points $J = AJ_A \cap BJ_B$, $I = CJ_A \cap DJ_B$ and $E = AC \cap BD$ are collinear.
 ",424,3
 2007n3,"Let $X$ be a set of 10,000 integers, none of them is divisible by 47. Prove that there exists a 2007-element subset $Y$ of $X$ such that $a - b + c - d + e$ is not divisible by 47 for any $a, b, c, d, e \in Y$.","\textbf{Solution.} Call a set $M$ of integers \textit{good} if $47 \nmid a - b + c - d + e$ for any $a, b, c, d, e \in M$.
 
@@ -11917,7 +11917,7 @@ This completes the proof.
 \vspace{1em}
 \textbf{Comment.} For the solution, it is essential to find a good set consisting of 10 different residues. Actually, consider a set $X$ containing almost uniform distribution of the nonzero residues (i.e., each residue occurs 217 or 218 times). Let $Y \subset X$ be a good subset containing 2007 elements. Then the set $K$ of all residues appearing in $Y$ contains not less than 10 residues, and obviously this set is good.
 
-On the other hand, there is no good set $K$ consisting of 11 different residues. The Cauchy���Davenport theorem claims that for any sets $A$, $B$ of residues modulo a prime $p$,
+On the other hand, there is no good set $K$ consisting of 11 different residues. The Cauchy锟斤拷锟紻avenport theorem claims that for any sets $A$, $B$ of residues modulo a prime $p$,
 \[
 |A + B| \ge \min\{p, |A| + |B| - 1\}.
 \]
@@ -12440,7 +12440,7 @@ a'(X) = a(X) + 1 \quad \text{for } X \in [UR]; \qquad a'(X) = a(X) \quad \text{f
 \]
 And since the rectangle $[UR]$ is contained in $[PR]$, we still have $a'(X) \leq b(X)$ for all $X$, by (2); conditions (1) are satisfied and the proof is complete.
 ",486,3
-2006c6,"\textit{A holey triangle} is an upward equilateral triangle of side length $n$ with $n$ upward unit triangular holes cut out. A \textit{diamond} is a $60^\circ$���?120^\circ$ unit rhombus. Prove that a holey triangle $T$ can be tiled with diamonds if and only if the following condition holds: Every upward equilateral triangle of side length $k$ in $T$ contains at most $k$ holes, for $1 \leq k \leq n$.","\textbf{Solution.} Let $T$ be a holey triangle. The unit triangles in it will be called \textit{cells}. We say simply ``triangle'' instead of ``upward equilateral triangle'' and ``size'' instead of ``side length.''
+2006c6,"\textit{A holey triangle} is an upward equilateral triangle of side length $n$ with $n$ upward unit triangular holes cut out. A \textit{diamond} is a $60^\circ$锟斤拷锟?120^\circ$ unit rhombus. Prove that a holey triangle $T$ can be tiled with diamonds if and only if the following condition holds: Every upward equilateral triangle of side length $k$ in $T$ contains at most $k$ holes, for $1 \leq k \leq n$.","\textbf{Solution.} Let $T$ be a holey triangle. The unit triangles in it will be called \textit{cells}. We say simply ``triangle'' instead of ``upward equilateral triangle'' and ``size'' instead of ``side length.''
 
 The necessity will be proven first. Assume that a holey triangle $T$ can be tiled with diamonds and consider such a tiling. Let $T'$ be a triangle of size $k$ in $T$ containing $h$ holes. Focus on the diamonds which cover (one or two) cells in $T'$. Let them form a figure $R$. The boundary of $T'$ consists of upward cells, so $R$ is a triangle of size $k$ with $h$ upward holes cut out and possibly some downward cells sticking out. Hence there are exactly $(k^2 + k)/2 - h$ upward cells in $R$, and at least $(k^2 - k)/2$ downward cells (not counting those sticking out). On the other hand each diamond covers one upward and one downward cell, which implies $(k^2 + k)/2 - h \ge (k^2 - k)/2$. It follows that $h \le k$, as needed.
 
@@ -12519,7 +12519,7 @@ Since $\angle BAD = \angle BAC + \angle CAD = \angle CAD + \angle DAE = \angle C
 \[
 \frac{AB}{AC} = \frac{AQ}{AR}.
 \]
-Because $AB/AC = AC/AD$, we obtain $AQ/AR = AC/AD$, which is equivalent to (1). Now Ceva���s theorem for the triangle $ACD$ yields
+Because $AB/AC = AC/AD$, we obtain $AQ/AR = AC/AD$, which is equivalent to (1). Now Ceva锟斤拷锟絪 theorem for the triangle $ACD$ yields
 \[
 \frac{AQ}{QC} \cdot \frac{CM}{MD} \cdot \frac{DR}{RA} = 1.
 \]
@@ -12554,7 +12554,7 @@ which completes the proof.
 
 Let lines $AE$ and $BF$ intersect at $C$. Since $AF$ and $BE$ are altitudes in triangle $ABC$, their common point $D$ is the orthocentre of this triangle. So $CD$ is perpendicular to $AB$, implying that $C$ lies on line $t$. Note that triangle $ABC$ is acute-angled. We mention the well-known fact that triangles $FEC$ and $ABC$ are similar in ratio $\cos \gamma$, where $\gamma = \angle ACB$. In addition, points $C$, $E$, $D$ and $F$ lie on the circle with diameter $CD$.
 
-Let $P$ be the common point of lines $EF$ and $t$. We are going to prove that $P$ lies on line $AO_1$. Denote by $N$ the second common point of circle $\omega_1$ and $AC$; this is the point of $\omega_1$ diametrically opposite to $D$. By Menelaus���?theorem for triangle $DCN$, points $A$, $O_1$ and $P$ are collinear if and only if
+Let $P$ be the common point of lines $EF$ and $t$. We are going to prove that $P$ lies on line $AO_1$. Denote by $N$ the second common point of circle $\omega_1$ and $AC$; this is the point of $\omega_1$ diametrically opposite to $D$. By Menelaus锟斤拷锟?theorem for triangle $DCN$, points $A$, $O_1$ and $P$ are collinear if and only if
 \[
 \frac{CA}{AN} \cdot \frac{NO_1}{O_1D} \cdot \frac{DP}{PC} = 1.
 \]
@@ -12720,7 +12720,7 @@ The use of oriented angles is a very efficient method to omit this trouble. It s
 
 \bigskip
 
-\textbf{Comment 2.} Actually, the fact that the circles $(AB_1C_1)$, $(BC_1A_1)$ and $(CA_1B_1)$ have a common point does not require a proof; it is known as Miquel���s theorem.
+\textbf{Comment 2.} Actually, the fact that the circles $(AB_1C_1)$, $(BC_1A_1)$ and $(CA_1B_1)$ have a common point does not require a proof; it is known as Miquel锟斤拷锟絪 theorem.
 
 ",953,4
 2006n2,"\textbf{N2.} For $x \in (0,1)$ let $y \in (0,1)$ be the number whose $n$th digit after the decimal point is the $(2^n)$th digit after the decimal point of $x$. Show that if $x$ is rational then so is $y$.","\textbf{Solution.} Since $x$ is rational, its digits repeat periodically starting at some point. We wish to show that this is also true for the digits of $y$, implying that $y$ is rational.
@@ -12729,7 +12729,7 @@ Let $d$ be the length of the period of $x$ and let $d = 2^u \cdot v$, where $v$ 
 \[
 2^w \equiv 1 \pmod{v}.
 \]
-(For instance, one can choose $w$ to be $\varphi(v)$, the value of Euler���s totient function at $v$.) Therefore
+(For instance, one can choose $w$ to be $\varphi(v)$, the value of Euler锟斤拷锟絪 totient function at $v$.) Therefore
 \[
 2^{n+w} = 2^n \cdot 2^w \equiv 2^n \pmod{v}
 \]
@@ -12868,7 +12868,7 @@ This proves that if ${a_n}$ contains an infinite number of positive and negative
 2005p3,"Let $x, y, z > 0$ satisfy $xyz\ge 1$. Prove that \[\frac{x^5-x^2}{x^5+y^2+z^2} + \frac{y^5-y^2}{x^2+y^5+z^2} + \frac{z^5-z^2}{x^2+y^2+z^5} \ge 0.\]",,0,
 2005p5,"Let $ABCD$ be a fixed convex quadrilateral with $BC = DA$ and $BC \nparallel DA$. Let two variable points $E$ and $F$ lie of the sides $BC$ and $DA$, respectively, and satisfy $BE = DF$. The lines $AC$ and $BD$ meet at $P$, the lines $BD$ and $EF$ meet at $Q$, the lines $EF$ and $AC$ meet at $R$. Prove that the circumcircles of the triangles $PQR$, as $E$ and $F$ vary, have a common point other than $P$.","Let $M$ be the Miquel point of complete quadrilateral $ADBC$; in other words, let $M$ be the second intersection point of the circumcircles of $\triangle APD$ and $\triangle BPC$. (A good diagram should betray this secret; all the points are given in the picture.) This makes lots of sense since we know $E$ and $F$ will be sent to each other under the spiral similarity too.
 
-Thus $M$ is the Miquel point of complete quadrilateral $FACE$. As $R = \overline{FE} \cap \overline{AC}$ we deduce $FARM$ is a cyclic quadrilateral (among many others, but we���ll only need one).
+Thus $M$ is the Miquel point of complete quadrilateral $FACE$. As $R = \overline{FE} \cap \overline{AC}$ we deduce $FARM$ is a cyclic quadrilateral (among many others, but we锟斤拷锟絣l only need one).
 
 Now look at complete quadrilateral $AFQP$. Since $M$ lies on $(DFQ)$ and $(RAF)$, it follows that $M$ is in fact the Miquel point of $AFQP$ as well. So $M$ lies on $(PQR)$.
 
@@ -12892,25 +12892,25 @@ t_{12} = 1 + a_3 + a_4 + a_5 + b_{34} + b_{35} + b_{45} \ge \frac{2}{5}n + \frac
 \]
 and we similarly define $t_{ij}$ for $1 \le i < j \le 5$.
 
-\textbf{Claim ���} The number $\frac{2n+1}{5}$ is equal to some integer $k$, fourteen of the $t$���s are equal to $k$, and the last one is equal to $k+1$.
+\textbf{Claim 锟斤拷锟絵 The number $\frac{2n+1}{5}$ is equal to some integer $k$, fourteen of the $t$锟斤拷锟絪 are equal to $k$, and the last one is equal to $k+1$.
 
 \textbf{Proof.} First, summing all fifteen equations gives
 \begin{align*}
 6n + 4 &= 10 + 6(n - 1) = 10 + \sum_{1 \le i \le 5} 6a_i + \sum_{1 \le i < j \le 5} 6b_{ij} \\
 &= \sum_{1 \le i \le 5} t_i + \sum_{1 \le i < j \le 5} t_{ij}.
 \end{align*}
-Thus the sum of the 15 $t$���s is $6n + 4$. But since all the $t$���s are integers at least $\frac{2n+1}{5} = \frac{6n + 3}{15}$, the conclusion follows. \qed
+Thus the sum of the 15 $t$锟斤拷锟絪 is $6n + 4$. But since all the $t$锟斤拷锟絪 are integers at least $\frac{2n+1}{5} = \frac{6n + 3}{15}$, the conclusion follows. \qed
 
 We however will also manipulate the equations to get the following.
 
-\textbf{Claim ���} We have 
+\textbf{Claim 锟斤拷锟絵 We have 
 \[
 t_{45} \equiv 1 + t_1 + t_2 + t_3 + t_{12} + t_{23} + t_{31} \pmod{3}.
 \]
 
-\textbf{Proof.} This follows directly by computing the coefficient of the $a$���s and $b$���s. We will nonetheless write out a derivation of this equation, to motivate it, but the proof stands without it.
+\textbf{Proof.} This follows directly by computing the coefficient of the $a$锟斤拷锟絪 and $b$锟斤拷锟絪. We will nonetheless write out a derivation of this equation, to motivate it, but the proof stands without it.
 
-Let $B = \sum_{1 \le i < j \le 5} b_{ij}$ be the sum of all $b$���s. First, note that
+Let $B = \sum_{1 \le i < j \le 5} b_{ij}$ be the sum of all $b$锟斤拷锟絪. First, note that
 \begin{align*}
 t_1 + t_2 &= B + b_{34} + b_{45} + b_{35} - b_{12} \\
 &= B + (t_{12} - 1 - a_3 - a_4 - a_5) - b_{12} \\
@@ -13004,7 +13004,7 @@ In addition, $(n + \sqrt{10} - 3)^2$ is best possible, as seen by taking $(a,b,c
 \[
 T = \{t_1, \dots, t_n\}
 \]
-as large as possible, meaning it���s impossible to add any more elements to $T$. That means, for each $t \in \{1, \dots, 10^6\}$ either $t \in T$ already or there exist two distinct elements $a, b \in A$ and $t_i \in T$ such that
+as large as possible, meaning it锟斤拷锟絪 impossible to add any more elements to $T$. That means, for each $t \in \{1, \dots, 10^6\}$ either $t \in T$ already or there exist two distinct elements $a, b \in A$ and $t_i \in T$ such that
 \[
 t = t_i + b - a \tag{$\star$}.
 \]
@@ -13090,7 +13090,7 @@ Clearing the square on the right-hand side we want to show
 
 We use AM-GM directly on $2d_i d_j \le d_i^2 + d_j^2$: this actually solves the problem. The annoying part is to check that the coefficients actually match:
 
-\textbf{Claim (Big bash)} ���?For an index $1 \le k \le n-1$, we have
+\textbf{Claim (Big bash)} 锟斤拷锟?For an index $1 \le k \le n-1$, we have
 \[
 \sum_{i<k} \left( 3ik(n-i)(n-k) - (n^2 - 1)i(n-k) \right)
 + \sum_{j>k} \left( 3kj(n-k)(n-j) - (n^2 - 1)k(n-j) \right)
@@ -13183,7 +13183,7 @@ where the term \( \frac{2}{d_{bb}} \) does not appear (obviously).
 \end{claim}
 
 \begin{proof}
-WLOG let���s suppose \( (a,b,c) = (2,1,n) \) and that rotating ray \( O_2O_1 \) hits \( O_3, O_4, \dots, O_n \) in that order. We have
+WLOG let锟斤拷锟絪 suppose \( (a,b,c) = (2,1,n) \) and that rotating ray \( O_2O_1 \) hits \( O_3, O_4, \dots, O_n \) in that order. We have
 \[
 \frac{2}{d_{12}} \le \angle(213), \quad
 \frac{2}{d_{13}} \le \min \{ \angle(213), \angle(314) \}, \quad \dots, \quad
@@ -13290,7 +13290,7 @@ We know that $BE=BM=BD$ so a circle with diameter $ED$ can be circumscribed arou
 \[
 (-x + y + z)(x - y + z)(x + y - z) \le xyz
 \]
-which when expanded is equivalent to Schur���s inequality. Alternatively, if one wants to avoid appealing to Schur, then the following argument works:
+which when expanded is equivalent to Schur锟斤拷锟絪 inequality. Alternatively, if one wants to avoid appealing to Schur, then the following argument works:
 
 \begin{itemize}
   \item At most one term on the left-hand side is negative; if that occurs we are done from \( xyz > 0 > (-x + y + z)(x - y + z)(x + y - z) \).
@@ -13348,7 +13348,7 @@ Prove that \( CD \) is tangent to \( G_2 \).
 
 Let \( P \) and \( Q \) be the centers of \( G_1 \) and \( G_2 \). Let line \( MQ \) meet \( G_1 \) again at \( W \), the homothetic image of \( Q \) under \( G_1 \to G \). Meanwhile, let \( T \) be the intersection of segment \( PQ \) with \( G_2 \), and let \( L \) be its homothetic image on \( G \). Since \( PTQ \perp AB \), it follows \( LW \) is a diameter of \( G \). Let \( O \) be its center.
 
-\textbf{Claim ���} \( MNTQ \) is cyclic.
+\textbf{Claim 锟斤拷锟絵 \( MNTQ \) is cyclic.
 
 \textit{Proof.} By Reim: 
 \[
@@ -13358,12 +13358,12 @@ Let \( P \) and \( Q \) be the centers of \( G_1 \) and \( G_2 \). Let line \( M
 
 Let \( E \) be the midpoint of \( AB \).
 
-\textbf{Claim ���} \( OEMN \) is cyclic.
+\textbf{Claim 锟斤拷锟絵 \( OEMN \) is cyclic.
 
 \textit{Proof.} By radical axis, the lines \( MM, NN, AEB \) meet at a point \( R \). Then \( OEMN \) lies on the circle with diameter \( OR \).
 \hfill\qedsymbol
 
-\textbf{Claim ���} \( MTE \) are collinear.
+\textbf{Claim 锟斤拷锟絵 \( MTE \) are collinear.
 
 \textit{Proof.} 
 \[
@@ -13371,13 +13371,13 @@ Let \( E \) be the midpoint of \( AB \).
 \]
 \hfill\qedsymbol
 
-Now consider the homothety mapping \( \triangle WAB \) to \( \triangle QCD \). It should map \( E \) to a point on line \( ME \) which is also on the line through \( Q \) perpendicular to \( AB \); that is, to point \( T \). Hence \( TCD \) are collinear, and it���s immediate that \( T \) is the desired tangency point.
+Now consider the homothety mapping \( \triangle WAB \) to \( \triangle QCD \). It should map \( E \) to a point on line \( ME \) which is also on the line through \( Q \) perpendicular to \( AB \); that is, to point \( T \). Hence \( TCD \) are collinear, and it锟斤拷锟絪 immediate that \( T \) is the desired tangency point.
 ",377,3
 1998p1,"In the convex quadrilateral $ABCD$, the diagonals $AC$ and $BD$ are perpendicular and the opposite sides $AB$ and $DC$ are not parallel. Suppose that the point $P$, where the perpendicular bisectors of $AB$ and $DC$ meet, is inside $ABCD$. Prove that $ABCD$ is a cyclic quadrilateral if and only if the triangles $ABP$ and $CDP$ have equal areas.","If \(ABCD\) is cyclic, then \(P\) is the circumcenter, and \(\angle APB + \angle PCD = 180^\circ\). The hard part is the converse.
 
 Let \(M\) and \(N\) be the midpoints of \(\overline{AB}\) and \(\overline{CD}\).
 
-\textbf{Claim ���} Unconditionally, we have \(\angle NEM = \angle MPN\).
+\textbf{Claim 锟斤拷锟絵 Unconditionally, we have \(\angle NEM = \angle MPN\).
 
 \textit{Proof.} Note that \(\overline{EN}\) is the median of right triangle \(\triangle ECD\), and similarly for \(\overline{EM}\). Hence \(\angle NED = \angle EDN = \angle BDC\), while \(\angle AEM = \angle ACB\). Since \(\angle DEA = 90^\circ\), by looking at quadrilateral \(XDEA\) where \(X = \overline{CD} \cap \overline{AB}\), we derive that \(\angle NED + \angle AEM + \angle DXA = 90^\circ\), so
 \[
@@ -13394,7 +13394,7 @@ Finally, we have \(\angle MEN > 90^\circ\) from the configuration. These propert
 
 So \(EMPN\) is a parallelogram, and thus \(\overline{ME} \perp \overline{CD}\). This implies \(\angle BAE = \angle CEM = \angle EDC\), giving \(ABCD\) cyclic.
 ",196,2
-1998p2,"In a competition, there are $a$ contestants and $b$ judges, where $b\ge3$ is an odd integer. Each judge rates each contestant as either ���pass���?or ���fail���? Suppose $k$ is a number such that, for any two judges, their ratings coincide for at most $k$ contestants. Prove that $\frac{k}{a}\ge\frac{b-1}{2b}$.","Let $c_i$ stand for the number of judges who pass the $i$th candidate. The number of pairs of judges who agree on the $i$th contestant is then given by
+1998p2,"In a competition, there are $a$ contestants and $b$ judges, where $b\ge3$ is an odd integer. Each judge rates each contestant as either 锟斤拷锟絧ass锟斤拷锟?or 锟斤拷锟絝ail锟斤拷锟? Suppose $k$ is a number such that, for any two judges, their ratings coincide for at most $k$ contestants. Prove that $\frac{k}{a}\ge\frac{b-1}{2b}$.","Let $c_i$ stand for the number of judges who pass the $i$th candidate. The number of pairs of judges who agree on the $i$th contestant is then given by
 \[
 \binom{c_i}{2} + \binom{b - c_i}{2}
 = \frac{1}{2} \left( c_i(c_i - 1) + (b - c_i)(b - c_i - 1) \right) \\
@@ -13477,7 +13477,7 @@ $4;2+2;2+1+1;1+1+1+1$
 
 Prove that, for any integer $n \ge 3$,
 
-$2^{n^{2}/4}<f(2^{n})<2^{n^{2}/2}$.","It's clear that $f$ is non-decreasing. By sorting by the number of $1$���s we used, we have the equation
+$2^{n^{2}/4}<f(2^{n})<2^{n^{2}/2}$.","It's clear that $f$ is non-decreasing. By sorting by the number of $1$锟斤拷锟絪 we used, we have the equation
 \[
 f(N) = f\left( \left\lfloor \frac{N}{2} \right\rfloor \right) + f\left( \left\lfloor \frac{N}{2} \right\rfloor - 1 \right) + f\left( \left\lfloor \frac{N}{2} \right\rfloor - 2 \right) + \cdots + f(1) + f(0). \tag{$\star$}
 \]
@@ -13499,7 +13499,7 @@ Lower bound. First, we contend that $f$ is convex. We'll first prove this in the
 \]
 This is true since there are an equal number of terms on each side and $f$ is nondecreasing. \qed
 
-\textbf{Claim ���} For each $1 \le k < 2^{n-1}$, we have
+\textbf{Claim 锟斤拷锟絵 For each $1 \le k < 2^{n-1}$, we have
 \[
 f(2^{n-1} - k) + f(k + 1) \ge 2f(2^{n-2})
 \]
@@ -13916,17 +13916,17 @@ Edit: to elementarize the $\lim_{n \to \infty} \frac{\pi(n)}{n} = 0$ part: Look 
 
 \[|F| = \bigg|\bigcup_{i=1}^n F_i \bigg| = \sum_{i=1}^{2n-1} |F_i| - \sum_{1\leq i<j \leq 2n-1} |F_i \cap F_j| + E \tag{1}\]
 
-for some $E \geq 0$. Let���s calculate the first two sums on the far right.
+for some $E \geq 0$. Let锟斤拷锟絪 calculate the first two sums on the far right.
 
 For any $i$, $|F_i| = 2n \cdot (2n - 2)!$, since there are are $2n$ choices for $x_i$, which fixes $x_{i+1}$, and $(2n-2)!$ choices for the remaining elements. Thus
 
 \[\sum_{i=1}^{2n - 1}|F_i| = 2n \cdot (2n - 2)! \cdot (2n - 1) = (2n)!\]
 
-Now let���s compute $|F_i \cap F_j|$, where $1 \leq i < j \leq 2n - 1$. It���s not possible that $|x_i - x_{i+1}| = |x_{i+1}- x_{i+2}| = n$, since that would imply $x_i = x_{i+2}$. So $|F_i \cap F_j| = 0$ if $j = i + 1$. If $j > i + 1$, then $|F_i \cap F_j| = 2n \cdot (2n - 2) \cdot (2n - 4)!$ (there are $2n$ choices for $x_i, x_{i+1}$, $2n - 2$ for $x_j, x_{j+1}$, and $(2n - 4)!$ for everything else.)
+Now let锟斤拷锟絪 compute $|F_i \cap F_j|$, where $1 \leq i < j \leq 2n - 1$. It锟斤拷锟絪 not possible that $|x_i - x_{i+1}| = |x_{i+1}- x_{i+2}| = n$, since that would imply $x_i = x_{i+2}$. So $|F_i \cap F_j| = 0$ if $j = i + 1$. If $j > i + 1$, then $|F_i \cap F_j| = 2n \cdot (2n - 2) \cdot (2n - 4)!$ (there are $2n$ choices for $x_i, x_{i+1}$, $2n - 2$ for $x_j, x_{j+1}$, and $(2n - 4)!$ for everything else.)
 
 How often is $|F_i \cap F_j| \neq 0$? We know $i$ is at least $1$ and at most $2n - 3$, and for any value of $i$, there are $2n - 2 - i$ possible values for $j$. So the number of non-empty intersections $|F_i \cap F_j|$ is\[\sum_{i=1}^{2n-3} 2n - 2 - i = \sum_{i=1}^{2n-3}i = \frac{(2n-3)(2n-2)}{2}.\]Now we can compute\begin{align*} \sum_{1\leq i < j \leq 2n-1} |F_i \cap F_j| &= 2n \cdot (2n - 2) \cdot (2n - 4)! \cdot \frac{(2n - 3)(2n - 2)}{2} \\ &= \frac{2n \cdot (2n-2)^2 \cdot (2n - 3)!}{2} = \frac{(2n)!}{2} \cdot \frac{2n - 2}{2n - 1} \\ &< \frac{(2n)!}{2}. \end{align*}
 
-Let���s plug this into $(1)$:
+Let锟斤拷锟絪 plug this into $(1)$:
 
 \[|F| = \sum_{i=1}^{2n - 1} |F_i| - \sum_{1\leq i < j \leq 2n-1} |F_i \cap F_j| + E > (2n)! - \frac{(2n)!}{2} + E \geq \frac{(2n)!}{2}.\]
 
@@ -14198,11 +14198,11 @@ Then, $T_1IX_1\perp S_2S_3$ because a diameter is perpendicular to a chord at it
 For the case $n=2891$, notice that $7|n$. Considering all solutions modulo $7$ of the equation $x^3-3xy^2+y^3\equiv0\pmod{7}$ yields only $x\equiv y\equiv 0\pmod{7}$. But, this implies that $7^3$ divides $2891$ which is clearly not true.",142,2
 1982p6,"Let $S$ be a square with sides length $100$. Let $L$ be a path within $S$ which does not meet itself and which is composed of line segments $A_0A_1,A_1A_2,A_2A_3,\ldots,A_{n-1}A_n$ with $A_0=A_n$. Suppose that for every point $P$ on the boundary of $S$ there is a point of $L$ at a distance from $P$ no greater than $\frac {1} {2}$. Prove that there are two points $X$ and $Y$ of $L$ such that the distance between $X$ and $Y$ is not greater than $1$ and the length of the part of $L$ which lies between $X$ and $Y$ is not smaller than $198$.","Let the square be A'B'C'D'. The idea is to find points of L close to a particular point of A'D' but either side of an excursion to B'.
 
-We say L approaches a point P' on the boundary of the square if there is a point P on L with PP' ���?1/2. We say L approaches P' before Q' if there is a point P on L which is nearer to A0 (the starting point of L) than any point Q with QQ' ���?1/2.
+We say L approaches a point P' on the boundary of the square if there is a point P on L with PP' 锟斤拷锟?1/2. We say L approaches P' before Q' if there is a point P on L which is nearer to A0 (the starting point of L) than any point Q with QQ' 锟斤拷锟?1/2.
 
-Let A' be the first vertex of the square approached by L. L must subsequently approach both B' and D'. Suppose it approaches B' first. Let B be the first point on L with BB' ���?1/2. We can now divide L into two parts L1, the path from A0 to B, and L2, the path from B to An.
+Let A' be the first vertex of the square approached by L. L must subsequently approach both B' and D'. Suppose it approaches B' first. Let B be the first point on L with BB' 锟斤拷锟?1/2. We can now divide L into two parts L1, the path from A0 to B, and L2, the path from B to An.
 
-Take X' to be the point on A'D' closest to D' which is approached by L1. Let X be the corresponding point on L1. Now every point on X'D' must be approached by L2 (and X'D' is non-empty, because we know that D' is approached by L but not by L1). So by compactness X' itself must be approached by L2. Take Y to be the corresponding point on L2. XY ���?XX' + X'Y ���?1/2 + 1/2 = 1. Also BB' ���?1/2, so XB ���?X'B' - XX' - BB' ���?X'B' - 1 ���?A'B' - 1 = 99. Similarly YB ���?99, so the path XY ���?198.
+Take X' to be the point on A'D' closest to D' which is approached by L1. Let X be the corresponding point on L1. Now every point on X'D' must be approached by L2 (and X'D' is non-empty, because we know that D' is approached by L but not by L1). So by compactness X' itself must be approached by L2. Take Y to be the corresponding point on L2. XY 锟斤拷锟?XX' + X'Y 锟斤拷锟?1/2 + 1/2 = 1. Also BB' 锟斤拷锟?1/2, so XB 锟斤拷锟?X'B' - XX' - BB' 锟斤拷锟?X'B' - 1 锟斤拷锟?A'B' - 1 = 99. Similarly YB 锟斤拷锟?99, so the path XY 锟斤拷锟?198.
 
 ",259,3
 1981p2,"Let $1 \le r \le n$ and consider all subsets of $r$ elements of the set $\{ 1, 2, \ldots , n \}$. Each of these subsets has a smallest member. Let $F(n,r)$ denote the arithmetic mean of these smallest numbers; prove that
@@ -14393,7 +14393,7 @@ a(m)-a(q)=(k_2-k_1)\,a(p),
 \qquad\text{so}\qquad
 a(m)=(k_2-k_1)\,a(p)+1\cdot a(q).
 \]
-Setting $x=k_2-k_1$ and $y=1$���both positive integers���gives the desired representation.
+Setting $x=k_2-k_1$ and $y=1$锟斤拷锟絙oth positive integers锟斤拷锟絞ives the desired representation.
 
 Because there are infinitely many such $a(m)$, for every $p \ge 1$ there exist infinitely many $a(m)$ that can be expressed in the target form.",155,2
 1975p3,"On the sides of an arbitrary triangle $ABC$, triangles $ABR, BCP, CAQ$ are constructed externally with $\angle CBP = \angle CAQ = 45^\circ, \angle BCP = \angle ACQ = 30^\circ, \angle ABR = \angle BAR = 15^\circ$. Prove that $\angle QRP = 90^\circ$ and $QR = RP$.","Consider $X$ and $Y$ so that $\triangle CQA\sim \triangle CPX$ and $\triangle CPB\sim \triangle CQY$. Furthermore, let $AX$ and $BY$ intersect at $F$. Now, this means that $\angle PBC = 45 = \angle QAC = \angle PXC$ and $\angle PCB = 15 = \angle QCA = \angle PCX$, so $\triangle BPC\cong \triangle XPC$. Thus, $XC = BC$ and $\angle BCX = 30 + 30 = 60$, so $\triangle BCX$ is equilateral. Similarly is $\triangle ACY$. Yet, it is well-known that the intersection of $BY$ and $AX$, which is $F$, must be the Fermat Point of $\triangle ABC$ if $\triangle AYC$ and $\triangle BXC$ are equilateral. Now, $\angle PBX = 60 - 45 = 15$. Similarly, $\angle PXB = 15$, so $\triangle BRA\sim \triangle BPX$, so a spiral similarity maps $\triangle BPR\sim \triangle BXA$. This implies that $\angle BRP = \angle FAB$. Similarly, $\angle ARQ = \angle FBA$, so $\angle BRP + \angle ARQ = \angle FBA + \angle FAB = 180 - \angle AFB = 60$. Then, $\angle PRQ = (180 - 15 - 15) - 60 = 90$. We also realize that $\frac {AX}{RP} = \frac {AB}{RB} = \frac {AB}{AR} = \frac {BY}{RQ}$. Now, $Y$ is a rotation of $A$ $60$ degrees around $C$ and $B$ is the same rotation of $X$ around $C$, so $AX$ maps to $YB$ from this rotation, so $AX = YB$. It follows that $RP = RQ$.",233,2
