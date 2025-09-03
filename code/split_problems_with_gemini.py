@@ -118,11 +118,11 @@ def call_gemini_with_retry(client: genai.Client, prompt: str, model: str) -> str
 
 
 def _sanitize_json_backslashes(text: str) -> str:
-    """Escape invalid backslashes inside JSON string values.
+    r"""Escape invalid backslashes inside JSON string values.
 
     Strategy:
     - Double every backslash that is not already part of a valid JSON escape sequence.
-    - Valid JSON escapes: \" \\ \/ \b \f \n \r \t \uXXXX
+    - Valid JSON escapes: \" \\ \/ \b \f \n \r \t \\uXXXX
     """
     import re
 
