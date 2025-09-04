@@ -14,8 +14,8 @@ except ImportError as exc:
     ) from exc
 
 
-DEFAULT_INPUT_PATH = os.path.join("RIMO", "RIMO-P_with_parts.csv")
-DEFAULT_OUTPUT_PATH = os.path.join("RIMO", "RIMO-P_parts_expanded.csv")
+DEFAULT_INPUT_PATH = os.path.join("RIMO", "RIMO-P_with_parts_test.csv")
+DEFAULT_OUTPUT_PATH = os.path.join("RIMO", "RIMO-P_parts_expanded_test.csv")
 DEFAULT_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-pro")
 
 
