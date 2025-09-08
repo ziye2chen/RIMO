@@ -175,17 +175,23 @@ Outputs a judged CSV next to your solutions file:
 
 ## 🧩 Quickstart (API path)
 
+1. Install dependencies:
 ```bash
-:: 1) Install deps
 pip install pandas openai transformers torch
+```
 
-:: 2) Set DashScope (Bailian) key
+2. Set DashScope (Bailian) key:
+```bash
 set DASHSCOPE_API_KEY=YOUR_DASHSCOPE_KEY
+```
 
-:: 3) Solve RIMO‑P sequentially
+3. Solve RIMO‑P sequentially:
+```bash
 python code\RIMO_P_solve_subproblems_api.py RIMO\RIMO-P.csv RIMO\RIMO-P_solutions_qwen3_sequential.csv qwen3-8b 0.25
+```
 
-:: 4) Evaluate strictly with DeepSeek‑R1
+4. Evaluate strictly with DeepSeek‑R1:
+```bash
 python code\RIMO_P_evaluate_solutions_deepseek_r1.py RIMO\RIMO-P.csv RIMO\RIMO-P_solutions_qwen3_sequential.csv deepseek-r1 0.25
 ```
 
