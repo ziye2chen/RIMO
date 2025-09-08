@@ -2,11 +2,11 @@
     <br>RIMO
 </h1>
 <p align="center">
-    <a href="http://huggingface.co/datasets/ziye2chen/ReIMO">
+    <a href="http://huggingface.co/datasets/ziye2chen/RIMO">
         <img alt="Static Badge" src="https://img.shields.io/badge/HuggingFace-ReIMO-yellow">
     </a>
     </a>
-    <a href="https://github.com/ziye2chen/ReIMO">
+    <a href="https://github.com/ziye2chen/RIMO">
         <img alt="Static Badge" src="https://img.shields.io/badge/Github-ReIMO-black">
     </a>
 </p>
@@ -15,84 +15,201 @@
 
 ![](img/math_model_scores.png)
 
-RIMO (Remade International Mathematical Olympiad) is a purpose-built benchmark for probing large-language-model reasoning at true Olympiad level.
+This repository contains two complementary tasks:
+- **RIMO‑N**: single-step math problems scored by a numeric final answer.
+- **RIMO‑P**: multi‑part proof problems solved step‑by‑step and strictly evaluated per sub‑solution.
 
-- 335 single-integer problems (RIMO-N) – each original IMO question is carefully rewritten so its answer is one unique integer, allowing 100 % deterministic grading.
+Datasets live under `RIMO/` and runnable scripts live under `code/`.
 
-- 472 full-proof problems (RIMO-P) – untouched IMO statements paired with vetted reference solutions and an open-source rubric grader for scalable proof assessment.
+### Requirements
 
-All 807 tasks are drawn exclusively from IMO contests and shortlists (1959 – 2023), covering the four canonical domains—algebra, geometry, number theory, combinatorics—and tagged by year, topic, and source. RIMO therefore delivers a high-resolution, noise-free yard-stick for evaluating both answer-finding and proof-writing skills in modern LLMs.
+- Python 3.10+
+- Windows users: run commands in Command Prompt (cmd) from the repo root, e.g. `D:\RIMO`.
+
+Install only what you need:
+
+```bash
+pip install pandas openai transformers torch google-genai
+```
 
 > [!NOTE]
 >
-> In the `RIMO` folder, we provide both `.jsonl` and `.csv` files for each task. The contents are the same. Just choose the one you prefer.
+> For local/Transformer models, a GPU with sufficient VRAM is strongly recommended.
+> For API usage, set provider keys as environment variables (see below). RIMO‑P examples use an OpenAI‑compatible endpoint from Aliyun DashScope (Bailian). See the Bailian console: [Aliyun Bailian (DashScope) console](https://bailian.console.aliyun.com/).
 
-------
+
+<!-- Notes:
+- For local/Transformer models, a GPU with sufficient VRAM is strongly recommended.
+- For API usage, set provider keys as environment variables (see below). RIMO‑P examples use an OpenAI‑compatible endpoint from Aliyun DashScope (Bailian). See the Bailian console: [Aliyun Bailian (DashScope) console](https://bailian.console.aliyun.com/).
+
+
+> [!NOTE]
+>
+> In the `RIMO` folder, we provide both `.jsonl` and `.csv` files for each task. The contents are the same. Just choose the one you prefer. -->
+
+<!-- ------
 
 ## 💡 News
 
-- *2025-06-04*: We have released the RIMO dataset.
+- *2025-06-04*: We have released the RIMO dataset. -->
 
 ------
 
-## 🔥 Test Your Model on RIMO-Main
+## Repository layout
 
-RIMO-N is a set of 335 single-integer problems, each original IMO question is carefully rewritten so its answer is one unique integer, allowing 100 % deterministic grading. For the answer verification, we can directly compare the predicted integer with the correct answer.
+```
+RIMO/                    datasets (CSV/JSONL)
+  RIMO-N.csv            numeric problems
+  RIMO-P.csv            proof problems
 
-### Your Own Model or Open-Source Model
-
-`./code/RIMO_N_Open_Source.py` is a sample code for evaluating your own model or open-source model on RIMO-N. You can simply replace the `model` variable with your own model for inference.
-
-
-```bash
-cd ./code
-python3 ./RIMO_N_Open_Source.py
+code/                   scripts
+  RIMO_N_API.py                         # RIMO‑N via API
+  RIMO_N_Open_Source.py                 # RIMO‑N via local Transformers
+  RIMO_P_solve_subproblems_api.py       # RIMO‑P solver (API, sequential)
+  RIMO_P_solve_subproblems_local.py     # RIMO‑P solver (local, sequential)
+  RIMO_P_evaluate_solutions_deepseek_r1.py  # RIMO‑P judge via DeepSeek‑R1 (API)
 ```
 
-### API
+---
 
-We also provide a sample code for evaluating the model with api. You can replace the `model_name` variable with your own model name, `api_key` with your own api key, and `base_url` with the url of the api.
+## 🔥 RIMO‑N: Numeric final‑answer evaluation
 
-```bash
-cd ./code
-python3 ./RIMO_N_API.py
-```
+Two options are provided: API or local model.
 
-------
+### API (`code/RIMO_N_API.py`)
 
-## 🧩 Test Your Model on RIMO-P
+- Reads `RIMO/RIMO-N.csv` (columns: `problem_id, problem, answer`).
+- Calls an OpenAI‑compatible chat completions API and extracts the final value inside `\boxed{}`.
+- Appends results to `code/answer_qwq.csv` (resumable by `problem_id`).
 
-RIMO-P is a set of 472 full-proof problems, untouched IMO statements paired with vetted reference solutions and an open-source rubric grader for scalable proof assessment. For the proof assessment, we can use the provided rubric to grade the proof and provide a score.
-
-### Your Own Model or Open-Source Model
-
-`./code/RIMO_P_Open_Source.py` is a sample code for evaluating your own model or open-source model on RIMO-P. You can simply replace the `model` variable with your own model for inference.
-
+Run:
 
 ```bash
-cd ./code
-python3 ./RIMO_P_Open_Source.py
+python code\RIMO_N_API.py
 ```
 
-### Judge
+Configure inside the script: `api_key`, `base_url`, `MODEL_NAME`, `CSV_OUT`.
 
-We also provide a sample code for evaluating the answer with `Qwen/Qwen3-8B` judge. If you have your fine-tuned judge, you can replace the `MODEL_NAME` variable with your own judge name.
+### Local (`code/RIMO_N_Open_Source.py`)
+
+- Loads a local Hugging Face model (default `Qwen/Qwen3-8B`).
+- Writes `code/proof_answer_qwen3_8b.csv` with columns `problem_id, correct_answer, llm_answer`.
+
+Run:
 
 ```bash
-cd ./code
-python3 ./RIMO_P_Judge.py
+python code\RIMO_N_Open_Source.py
 ```
 
-------
+---
 
-## 📎 Citation
+## 🔥 RIMO‑P: Sub‑problem solving and strict evaluation
 
-If you use RIMO in your work, please cite the following paper:
+RIMO‑P is performed in two phases: (1) produce per‑part solutions, (2) evaluate them strictly in order.
+
+### What RIMO‑P measures (from the paper)
+
+- A proof problem is split into up to 4 ordered sub‑problems. A model must solve them sequentially.
+- Let `parts ∈ {1..4}` be the total sub‑problems for a given item. Let `S_i` be the number of consecutive correct sub‑solutions starting from part 1.
+- The per‑problem score is `score_i = S_i / parts`. The benchmark performance `P` is the mean of `score_i` over all problems.
+- Evaluation is strict: the judge checks only the current step’s sub‑solution; any error, gap, or unjustified claim causes failure at that step and halts further credit for that problem.
+
+### Phase 1 — Produce sub‑solutions (sequential)
+
+Key idea: solve one sub‑problem at a time and pass the previous solution forward as a proved statement.
+
+Inputs: `RIMO/RIMO-P.csv` with columns:
+- `problem_id`, `problem`, `number_of_parts` (1..4)
+- `sub-problem1..4`, `sub-solution1..4` (official)
+
+Output format (both API and local solvers):
+- CSV columns `problem_id, parts, sub-problem1..4, llm_solution1..4`.
+- Non‑existing parts are kept as `None` (sub‑problem) and `N/A` (solution).
+
+Environment for API (DashScope/Bailian):
+
+```bash
+set DASHSCOPE_API_KEY=YOUR_DASHSCOPE_KEY
+```
+
+API solver (uses Qwen3 via DashScope; thinking disabled):
+
+```bash
+python code\RIMO_P_solve_subproblems_api.py RIMO\RIMO-P.csv RIMO\RIMO-P_solutions_qwen3_sequential.csv qwen3-8b 0.25
+```
+
+Local solver (Transformers):
+
+```bash
+python code\RIMO_P_solve_subproblems_local.py RIMO\RIMO-P.csv RIMO\RIMO-P_solutions_local_sequential.csv mistralai/Mathstral-7B-v0.1 0.25 1024
+```
+
+Notes:
+- Both solvers include a post‑processing step that fixes `problem_id` placeholders like `row_00001` by re‑reading the original input (handles BOM‑prefixed headers such as `\ufeffproblem_id`).
+
+### Phase 2 — Strict evaluation with DeepSeek‑R1
+
+Evaluator: `code/RIMO_P_evaluate_solutions_deepseek_r1.py`.
+
+- Loads references from `RIMO/RIMO-P.csv` and candidates from your produced solutions CSV.
+- Queries `deepseek-r1` via an OpenAI‑compatible client (DashScope/Bailian).
+- Sequential grading: stops at first incorrect step. Computes per‑problem `S_i / parts` and overall performance `P`.
+
+Run:
+
+```bash
+set DASHSCOPE_API_KEY=YOUR_DASHSCOPE_KEY
+python code\RIMO_P_evaluate_solutions_deepseek_r1.py RIMO\RIMO-P.csv RIMO\RIMO-P_solutions_qwen3_sequential.csv deepseek-r1 0.25
+```
+
+Outputs a judged CSV next to your solutions file:
+- Columns: `problem_id, parts, S_i, score_i, verdict1..4, reason1..4`.
+- Prints overall `P` across all evaluated problems.
+
+### Recommended usage protocol (from the paper)
+
+- Do not send all sub‑problems at once to a model. Solve exactly one sub‑problem per inference and chain the previous answer forward as an already‑proved statement.
+- The evaluator grades strictly step‑by‑step and stops at the first error, which encourages precise, incremental reasoning.
+
+---
+
+## 🧩 Quickstart (API path)
+
+```bash
+:: 1) Install deps
+pip install pandas openai transformers torch
+
+:: 2) Set DashScope (Bailian) key
+set DASHSCOPE_API_KEY=YOUR_DASHSCOPE_KEY
+
+:: 3) Solve RIMO‑P sequentially
+python code\RIMO_P_solve_subproblems_api.py RIMO\RIMO-P.csv RIMO\RIMO-P_solutions_qwen3_sequential.csv qwen3-8b 0.25
+
+:: 4) Evaluate strictly with DeepSeek‑R1
+python code\RIMO_P_evaluate_solutions_deepseek_r1.py RIMO\RIMO-P.csv RIMO\RIMO-P_solutions_qwen3_sequential.csv deepseek-r1 0.25
+```
+
+---
+
+## 🤔 Troubleshooting
+
+- If you see “No problems evaluated (no references matched)”, your CSV may contain a BOM. The evaluator and solvers resolve keys like `problem_id` even when stored as `\ufeffproblem_id`.
+- If API calls fail, check `DASHSCOPE_API_KEY` and connectivity to the OpenAI‑compatible endpoint (Bailian DashScope). See [Aliyun Bailian (DashScope) console](https://bailian.console.aliyun.com/).
+- For local models, reduce model size or `max_new_tokens` if you run out of memory.
+
+---
+
+
+<!-- ## 📎 Citation
+
+If you use RIMO in your work, please cite the following paper: -->
 
 <!-- ```
-@article{chen2025reimo,
-          title={ReIMO: A Remade International Mathematical Olympiad Benchmark for Evaluating Large Language Models},
-          year={2025},
+@inproceedings{rimo2025,
+  title     = {RIMO: Reasoning in Math with Sequential Sub-Problems and Strict Stepwise Evaluation},
+  booktitle = {NeurIPS 2025 Workshop},
+  year      = {2025},
+  note      = {See the repository for datasets and code.}
 }
 ``` -->
 
