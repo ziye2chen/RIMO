@@ -3,11 +3,11 @@
 </h1>
 <p align="center">
     <a href="http://huggingface.co/datasets/ziye2chen/RIMO">
-        <img alt="Static Badge" src="https://img.shields.io/badge/HuggingFace-ReIMO-yellow">
+        <img alt="Static Badge" src="https://img.shields.io/badge/HuggingFace-RIMO-yellow">
     </a>
     </a>
     <a href="https://github.com/ziye2chen/RIMO">
-        <img alt="Static Badge" src="https://img.shields.io/badge/Github-ReIMO-black">
+        <img alt="Static Badge" src="https://img.shields.io/badge/Github-RIMO-black">
     </a>
 </p>
 
