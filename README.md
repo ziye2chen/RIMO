@@ -206,18 +206,21 @@ python code\RIMO_P_evaluate_solutions_deepseek_r1.py RIMO\RIMO-P.csv RIMO\RIMO-P
 ---
 
 
-<!-- ## 📎 Citation
+## 📎 Citation
 
 If you use RIMO in your work, please cite the following paper: -->
 
 <!-- ```
-@inproceedings{rimo2025,
-  title     = {RIMO: Reasoning in Math with Sequential Sub-Problems and Strict Stepwise Evaluation},
-  booktitle = {NeurIPS 2025 Workshop},
-  year      = {2025},
-  note      = {See the repository for datasets and code.}
+@misc{chen2025rimoeasytoevaluatehardtosolveolympiad,
+      title={RIMO: An Easy-to-Evaluate, Hard-to-Solve Olympiad Benchmark for Advanced Mathematical Reasoning}, 
+      author={Ziye Chen and Chengwei Qin and Yao Shu},
+      year={2025},
+      eprint={2509.07711},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2509.07711}, 
 }
-``` -->
+```
 
 
 
