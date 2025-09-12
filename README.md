@@ -208,9 +208,9 @@ python code\RIMO_P_evaluate_solutions_deepseek_r1.py RIMO\RIMO-P.csv RIMO\RIMO-P
 
 ## 📎 Citation
 
-If you use RIMO in your work, please cite the following paper: -->
+If you use RIMO in your work, please cite the following paper: 
 
-<!-- ```
+```
 @misc{chen2025rimoeasytoevaluatehardtosolveolympiad,
       title={RIMO: An Easy-to-Evaluate, Hard-to-Solve Olympiad Benchmark for Advanced Mathematical Reasoning}, 
       author={Ziye Chen and Chengwei Qin and Yao Shu},
